@@ -50,4 +50,4 @@ Tests run against Chromium, Firefox, and WebKit (Safari) by default.
 
 ## AI Usage
 
-Claude AI is used in this project for code review and documentation only. All code is written by the project author.
+Claude AI is used in this project for code review, some configuration changes, and documentation only. All test code, page objects, etc are written by the project author.

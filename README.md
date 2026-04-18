@@ -47,3 +47,7 @@ playwright.config.ts  # Playwright configuration
 ## Browsers
 
 Tests run against Chromium, Firefox, and WebKit (Safari) by default.
+
+## AI Usage
+
+Claude AI is used in this project for code review and documentation only. All code is written by the project author.

@@ -1,9 +1,13 @@
 import { test, expect } from '@playwright/test';
+import { LoginPage } from '../pageObjects/login-page';
 
-test('login standard user', async ({ page }) => {
-    await page.goto('https://www.saucedemo.com/');
-    await page.getByPlaceholder('Username').fill('standard_user');
-    await page.getByPlaceholder('Password').fill('secret_sauce');
-    await page.getByRole('button', { name: 'LOGIN' }).click();
+const username = process.env.USER_NAME!;
+const userpassword = process.env.USER_PASSWORD!;
+
+test('standard user can login and arrive at the products page', async ({ page }) => {
+    await page.goto('/');
+    const loginPage = new LoginPage(page);
+    await loginPage.login(username, userpassword);
+    await expect(page.url()).toContain('/inventory.html');
     await expect(page.getByText('Products')).toBeVisible();
 });
